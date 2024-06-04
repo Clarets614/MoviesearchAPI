@@ -1,0 +1,21 @@
+﻿@model MovieModel
+
+<form asp-method="post" asp-action="MovieSearch">
+    <label for="name">Enter Title Here</label>
+    <input type="text" name="name" id="name" />
+    <input type="submit" />
+</form>
+
+@{
+    if(Model != null)
+    {
+        <br />
+
+        <h1>@Model.Title</h1>
+        <small style="color:midnightblue">Runtime:<strong>@Model.Runtime</strong>  Rated:<strong>@Model.Rated</strong> </small>
+        <p><img src="@Model.Poster" />
+        </p>
+        <p><strong>Plot:</strong> @Model.Plot</p>
+    }
+}
+
